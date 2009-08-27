@@ -25,39 +25,7 @@
 #
 ###############################################################################
 
-libname = 'copper'
-srcFiles = dict()
+import openwns
+import Copper
 
-srcFiles = [
-    'src/Copper.cpp',
-    'src/Transceiver.cpp',
-    'src/Transmitter.cpp',
-    'src/Receiver.cpp',
-    'src/Wire.cpp',
-    'src/Transmission.cpp',
-
-    'src/tests/WireTest.cpp',
-    'src/tests/ReceiverTest.cpp',
-    'src/tests/TransmitterTest.cpp',
-    ]
-
-hppFiles = [
-    'src/Receiver.hpp',
-    'src/ReceiverInterface.hpp',
-    'src/tests/TransmitterDataSentMock.hpp',
-    'src/tests/ReceiverMock.hpp',
-    'src/Transceiver.hpp',
-    'src/Transmitter.hpp',
-    'src/Transmission.hpp',
-    'src/Copper.hpp',
-    'src/Wire.hpp',
-
-    ]
-
-pyconfigs = [
-'copper/TimeDependentDistBER.py',
-'copper/Copper.py',
-'copper/__init__.py',
-]
-dependencies = []
-Return('libname srcFiles hppFiles pyconfigs dependencies')
+openwns.simulator.OpenWNS.modules.copper = Copper.Copper()
