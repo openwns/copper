@@ -180,7 +180,7 @@ namespace copper { namespace tests {
 		wns::pyconfig::View config =
 			wns::pyconfig::helper::createViewFromString(
 				"from copper.Copper import Receiver\n"
-				"from wns.Distribution import Fixed\n"
+				"from openwns.distribution import Fixed\n"
 				"receiver = Receiver(Fixed(0.1), 0.01, None)\n"
 				);
 		receiver = new Receiver(config.get("receiver"), wire);
